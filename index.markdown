@@ -8,14 +8,10 @@ layout: home
 This is a demo website which contains some training material on OSeMOSYS
 
 ## Lectures
-{% include presentations-list.html %}
+{% include lectures-list.html %}
 
 ## Modules
 {% include module-list.html %}
 
-## Tags:
-{% include tags_list.md %}
-
+## Tags
 {% include tags_list.html %}
-
-{% site.url %}

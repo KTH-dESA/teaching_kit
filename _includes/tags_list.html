@@ -1,0 +1,26 @@
+
+<!-- <ul class="tags">
+  {% for tag in site.tags %}
+    {% assign t = tag | first %}
+    {% assign posts = tag | last %}
+    <li>{{t | downcase | replace:" ","-" }} has {{ posts | size }} posts</li>
+  {% endfor %}
+  </ul> -->
+
+
+{% for tag in site.tags %}
+  {% assign t = tag | first %}
+  {% assign modules = tag | last %}
+
+{{ t | downcase }}
+<ul>
+{% for module in modules %}
+  {% if module.tags contains t %}
+  <li>
+    <a href="{{ module.url }}">{{ module.title }}</a>
+    <span class="date">{{ module.date | date: "%B %-d, %Y"  }}</span>
+  </li>
+  {% endif %}
+{% endfor %}
+</ul>
+{% endfor %}

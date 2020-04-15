@@ -1,0 +1,11 @@
+
+<ul class="post-list">
+    {% assign modules = site.posts | where: "categories","module" %}
+    {% for module in modules %}
+
+        <h4>
+          <a href="{{ module.url | relative_url }}">{{ module.title | escape }} </a>
+        </h4>
+
+    {% endfor %}
+    </ul>
