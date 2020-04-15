@@ -1,12 +1,11 @@
 
 <ul class="post-list">
-{% for presentation in site.presentations %}
+  {% assign filter_by_presentation = site.presentations | where: "categories","presentation" %}
+  {% for presentation in filter_by_presentation %}
 
-    <h4>
-      <a href="{{ presentation.url | relative_url }}">{{ presentation.title | escape }} </a>
-    </h4>
+      <h4>
+        <a href="{{ presentation.url | relative_url }}">{{ presentation.title | escape }} </a>
+      </h4>
 
-{% endfor %}
-</ul>
-
- 
+  {% endfor %}
+  </ul>

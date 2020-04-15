@@ -5,13 +5,17 @@ layout: home
 
 # Welcome to OSeMOSYS training kit
 
-#### This is a demo website which contains some training material on OSeMOSYS 
+This is a demo website which contains some training material on OSeMOSYS
 
-## Content
+## Lectures
+{% include presentations-list.html %}
 
-{% include content_list.md %}
+## Modules
+{% include module-list.html %}
 
 ## Tags:
-
 {% include tags_list.md %}
 
+{% include tags_list.html %}
+
+{% site.url %}
