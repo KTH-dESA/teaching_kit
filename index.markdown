@@ -1,6 +1,6 @@
 ---
 title: Homepage
-layout: home
+layout: default
 ---
 
 # Welcome to OSeMOSYS training kit

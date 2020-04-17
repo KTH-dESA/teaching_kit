@@ -42,7 +42,7 @@ exclude:
 
 collections:
   posts:
-    output: true
+    output: false
 
 defaults:
   - scope:
@@ -50,6 +50,7 @@ defaults:
       type: posts
     values:
       layout: presentation
+      # exclude: true
 
 
   # Default settings

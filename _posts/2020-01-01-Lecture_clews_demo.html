@@ -5,43 +5,10 @@ title: Lecture_clews_demo
 categories: lecture
 date: 15/04/20
 ---
-#Lecture_clews_demo
 
-Demo lecture on clews
-
-Author: Lorenzo
-
-Date: 15/04/20
-
----
-# About the teaching kit
-
-- The teaching kit is free and open-source
-- The teaching kit is licensed under CC-BY 4.0
-- The teaching kit is authored by many authors
----
-# What is climate?
-
-- climate is not weather
-- weather is not climate
----
-# What is land?
-
----
-
-# Land uses
-
-- Land is used for all sort of things
----
-# What is energy?
-
-- Energy is power
-- Energy is invisible
----
-# What is water?
-
-- Water is comprised from the elements Hydrogen and Oxygen
-- You can drink in water
-- Water is used for washing
----
-#End
+{% include title_slide.html title=page.title authors=page.author data=page.date%}
+{% include_relative /modules/2020-01-01-teaching_kit.html %}
+{% include_relative /modules/2020-01-01-climate.html %}
+{% include_relative /modules/2020-01-01-land.html %}
+{% include_relative /modules/2020-01-01-energy.html %}
+{% include_relative /modules/2020-01-01-water.html %}
