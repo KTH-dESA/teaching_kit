@@ -15,26 +15,27 @@ def pptx_extract(path,filename):
     slide_text = []
     n=0
     m=0
+    date = '2020-01-01' # Fixed, it's better to keep always the same date for modules in order to avoid problems 
 
     author = prs.core_properties.author
     title, file_extension = os.path.splitext(filename)
     
     # Assign tags to presentation
     print("- assign tags to the presentation "+title+", press 0 when finished")
-    tag=[]
-    t=[]
+    tags=''
+    t=''
     while t!="0":
         t = input("type tag: ")
         if t == "0" or t=="":
             continue
         else:
-            tag.append(t)
+            tags=tags+' '+t
     
 
     # Initialize text
-    slide_text = ['---','\n','layout: presentation','\n','author: ', author,'\n','title: ',title,'\n','tag: ',str(tag)]
+    slide_text = ['---','\n','categories: module\nexclude: true\nlayout: presentation','\n','author: ', author,'\n','title: ',title,'\n','tags: ',str(tags)]
 
-    Path("_presentations/figures/"+title).mkdir(parents=True, exist_ok=True) #check if destination folder for pictures exists and/or creates it
+    Path("_posts/figures/"+title).mkdir(parents=True, exist_ok=True) #check if destination folder for pictures exists and/or creates it
 
     # Extract and convert
     for slide in prs.slides:
@@ -63,6 +64,6 @@ def pptx_extract(path,filename):
                 continue
 
     # Save Slide
-    with open("_presentations/modules/"+title+".html","w") as presentation_file:
+    with open("_posts/modules/"+date+"-"+title+".html","w") as presentation_file:
         presentation_file.writelines(slide_text)
 
