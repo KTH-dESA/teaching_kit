@@ -1,0 +1,11 @@
+
+<ul class="post-list">
+  {% assign filter_by_lecture = site.posts | where: "categories","lecture" %}
+  {% for lecture in filter_by_lecture %}
+
+      <h4>
+        <a href="{{ lecture.url | relative_url }}">{{ lecture.title | escape }} </a>
+      </h4>
+
+  {% endfor %}
+  </ul>

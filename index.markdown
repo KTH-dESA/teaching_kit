@@ -1,17 +1,17 @@
 ---
 title: Homepage
-layout: home
+layout: default
 ---
 
 # Welcome to OSeMOSYS training kit
 
-#### This is a demo website which contains some training material on OSeMOSYS 
+This is a demo website which contains some training material on OSeMOSYS
 
-## Content
+## Lectures
+{% include lectures-list.html %}
 
-{% include content_list.md %}
+## Modules
+{% include module-list.html %}
 
-## Tags:
-
-{% include tags_list.md %}
-
+## Tags
+{% include tags_list.html %}

@@ -9,4 +9,4 @@ scripts/tables.py
 scripts/pptx_extract_shapes.py
 scripts/test.py
 *.pyc
-scripts\__pycache__
+*__pycache__

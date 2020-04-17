@@ -8,7 +8,7 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 #
-# If you need help with YAML syntax, here are some quick references for you: 
+# If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 #
@@ -29,7 +29,7 @@ twitter_username: lorem ipsum
 github_username:  lorem ipsum
 
 # Build settings
-theme: minima 
+theme: minima
 plugins:
   - jekyll-feed
 
@@ -40,22 +40,22 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
-  # Copy paste from NISMOD
 collections:
-  presentations:
-    output: true
+  posts:
+    output: false
 
 defaults:
   - scope:
       path: ""
-      type: presentations
+      type: posts
     values:
       layout: presentation
+      # exclude: true
 
-      
+
   # Default settings
 # defaults:
- # - 
+ # -
   #  scope:
    #   path: ""    # this select which files the following attribute should be given to (you can choose "folderXX")
     # type: "posts" #this applies to all the pages under the folder _post
