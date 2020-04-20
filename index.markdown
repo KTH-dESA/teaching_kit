@@ -7,6 +7,10 @@ layout: default
 
 This is a demo website which contains some training material on OSeMOSYS
 
+## Courses
+
+{% include courses_list.html %}
+
 ## Lectures
 {% include lectures-list.html %}
 
@@ -15,3 +19,8 @@ This is a demo website which contains some training material on OSeMOSYS
 
 ## Tags
 {% include tags_list.html %}
+
+
+
+
+
