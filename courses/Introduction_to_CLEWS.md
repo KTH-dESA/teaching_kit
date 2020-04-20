@@ -11,5 +11,5 @@ This course is an introduction to CLEWS
 
 Author: Lorenzo Sani
 
-1. [Lecture Clews]({{base.url}}/teaching_kit/_posts/Lecture Clews.html)
-1. [Lecture Water]({{base.url}}/teaching_kit/_posts/Lecture Water.html)
+1. [Lecture Clews]({{base.url}}/teaching_kit/lecture/Lecture_Clews.html)
+1. [Lecture Water]({{base.url}}/teaching_kit/lecture/Lecture_Water.html)

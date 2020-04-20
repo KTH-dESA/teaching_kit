@@ -11,5 +11,5 @@ This course contains the lectures showing our capabilities of transforming Power
 
 Author: Lorenzo Sani
 
-1. [Lecture demo]({{base.url}}/teaching_kit/_posts/Lecture demo.html)
-1. [Lecture demo 2]({{base.url}}/teaching_kit/_posts/Lecture demo 2.html)
+1. [Lecture demo]({{base.url}}/teaching_kit/lecture/Lecture_demo.html)
+1. [Lecture demo 2]({{base.url}}/teaching_kit/lecture/Lecture_demo_2.html)
