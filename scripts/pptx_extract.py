@@ -22,18 +22,19 @@ def pptx_extract(path,filename):
     
     # Assign tags to presentation
     print("- assign tags to the presentation "+title+", press 0 when finished")
-    tags=''
+    tags=[]
     t=''
     while t!="0":
         t = input("type tag: ")
         if t == "0" or t=="":
             continue
         else:
-            tags=tags+' '+t
+            #tags=tags+' '+t
+            tags.append(t)
     
 
     # Initialize text
-    slide_text = ['---','\n','categories: module\nexclude: true\nlayout: presentation','\n','author: ', author,'\n','title: ',title,'\n','tags: ',str(tags)]
+    slide_text = ['---','\n','categories: module\nexclude: true\nlayout: presentation','\n','author: ', author,'\n','title: ',title,'\n','tags: ',str(tags)]#'\npermalink: \'_posts/'+title+'\'']
 
     Path("_posts/figures/"+title).mkdir(parents=True, exist_ok=True) #check if destination folder for pictures exists and/or creates it
 
@@ -64,6 +65,7 @@ def pptx_extract(path,filename):
                 continue
 
     # Save Slide
-    with open("_posts/modules/"+date+"-"+title+".html","w") as presentation_file:
+    title_f = title.replace(' ','_')
+    with open("_posts/modules/"+date+"-"+title_f+".html","w") as presentation_file:
         presentation_file.writelines(slide_text)
 

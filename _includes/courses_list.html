@@ -1,0 +1,10 @@
+<ul class="pages-list">
+    {% assign courses = site.pages | where: "categories","course" %}
+    {% for course in courses %}
+
+        <h4>
+          <a href="{{ course.url | relative_url }}">{{ course.title | escape }} </a>
+        </h4>
+
+    {% endfor %}
+ </ul>

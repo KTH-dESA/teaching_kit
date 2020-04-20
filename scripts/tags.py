@@ -5,36 +5,38 @@ path = '_posts/modules'
 
 folder = os.fsencode(path)
 
-tag_list = ''
-tag = 1
+tag_list = []
 
 for file in os.listdir(folder):
-    tag=''
-    t=1
+    tags=[]
+    t=[]
     
     filename = os.fsdecode(file)
     title, file_extension = os.path.splitext(filename)
     
     # Select presentations
     if file_extension==".html":
-        print("\nModule: "+title)
+        title_short=title.split('-')
+        title_short=title_short[-1]
+        print("\nModule: "+title_short)
         prs = frontmatter.load(path+"/"+filename)
         
         # Print tags of the presentation
-        try: print("Tags already assigned to presentation: "+str(prs["tags"]))
+        try: print("Tags already assigned to module: "+str(prs["tags"]))
         
         # if presentation has no tags assign some
         except: 
-            print("this presentation has no tags, give it some tags:")
-            print("- assign tags to the presentation "+title+", press 0 when finished")
+            print("this module has no tags, give it some tags:")
+            print("- assign tags to the module "+title+", press 0 when finished")
             while t!="0":
                 t = input("type tag: ")
                 if t == "0" or t=="":
                     continue
                 else:
-                    #tag.append(t)#+"; ")#do something
-                    tag = tag +" "+t
-            prs['tags']=tag
+                    #tags = tags +t
+                    tags.append(t)
+            prs['tags']=tags
+            tag_list= tag_list + prs["tags"]
             
 
         # assign/change tags of one presentation
@@ -43,37 +45,36 @@ for file in os.listdir(folder):
             i=input("Do you want to keep these tags? [y/n] ")
             t=""
             if i == "y":
-                #tag_list= tag_list + prs["tags"]
-                #tag_list=tag_list + prs["tags"]
+                tag_list= tag_list + prs["tags"]
                 break
             elif i == "n":
-                print("- assign tags to the presentation "+title+", press 0 when finished")
+                print("- assign tags to the module "+title+", press 0 when finished")
                 
-                tag=''
+                tags=[]
                 while t!="0":
                     t = input("type tag: ")
                     if t == "0" or t=="":
                         continue
                     else:
-                        #tag.append(t)
-                        tag = tag +" "+t
-                prs['tags']=tag
+                        #tags = tags +t
+                        tags.append(t)
+                prs['tags']=tags
                 break
 
             else: 
                 print("wrong entry")
             
         print("new tags: "+str(prs["tags"]))
-        #tag_list= tag_list + prs["tags"]       
-        #tag_list=tag_list + prs["tags"]
+        tag_list= tag_list + prs["tags"]
+        #tag_list.append(prs["tags"])
         
         # save new tags 
         with open(path+"/"+title+".html","w") as presentation_file:
             presentation_file.writelines(frontmatter.dumps(prs))
 
-#tag_list=list(set(tag_list))
-#tag_list=sorted(tag_list)
-#print("\nThis is the list of tags used: "+str(tag_list))
+tag_list=list(set(tag_list))
+tag_list=sorted(tag_list)
+print("\nThis is the list of tags used: "+str(tag_list))
 
 # Create "tag_page.md" with a list of the tags used
 #text=[]
@@ -96,7 +97,7 @@ for file in os.listdir(folder):
 #        file.writelines(text)
 
 
-print("\nAssigned a tag to all presentations in "+path)
+print("\nAssigned a tag to all modules in "+path)
 
 # Update content list
 #content_list()
