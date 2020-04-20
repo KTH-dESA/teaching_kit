@@ -15,12 +15,12 @@ for file in os.listdir(folder):
         print("skip "+filename)
         continue
     else:
-        pptx_extract(path,filename)
+        pptx_extract(path, filename)
 
 print("converted all presentations in "+path+" to markdown presentations")
 
 #  update content list
-content_list()
+# content_list()
 
     
     
