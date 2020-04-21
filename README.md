@@ -30,7 +30,8 @@ In case of working from Windows it is useful  setting up a Linux subsystem.
 1. Import the powerpoint presentations in ```files/ppt_presentations```
 1. Tranform the presentations in modules. Run the script ```main.py``` to convert powerpoint presentations to markdown files, type ```python scripts/main.py```. The modules will be saved in presentations/modules
 1. Apply tags to the modules running the script ```tags.py```
-1. Create lectures combining the modules imported using the scripts ```create_lecture.py``` 
+1. Create lectures combining the modules imported using the scripts ```create_lecture.py```
+1. Create course pages as a combination of lectures using the script  ```create_course.py```
 1. You can preview the website locally at http://127.0.0.1:4000/teaching_kit/ typing ```jekyll serve``` (the first time use ```bundle exec jekyll serve```)
 
 ### Upload changes
