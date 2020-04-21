@@ -2,13 +2,13 @@
 categories: course
 layout: page
 author: Lorenzo Sani
-title: Introduction to CLEWS
+title: First Demo Course
 ---
 <h1>{{ page.title }}</h1>
 
 Authors: {{page.author}}
 
-This course is an introduction to CLEWS
+This course contains the lectures showing our capabilities of transforming PowerPoint presentations to markdown presentations
 
 ***Lectures contained in this course:***
 
