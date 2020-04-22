@@ -12,11 +12,13 @@ course_text.append("<h1>{{ page.title }}</h1>\n\nAuthors: {{page.author}}\n\n"+c
 
 #course_text.append("\n# "+course_title+"\n\n"+course_description+"\n\nAuthor: "+course_author+"\n\n")
 
+
 # Makes a list of all the lectures
 path = '_posts/'
 folder = os.fsencode(path)
 lect_list =[]
 lect_list_long = []
+
 for file in os.listdir(folder):
     filename = os.fsdecode(file)
     title, file_extension = os.path.splitext(filename)
@@ -26,6 +28,7 @@ for file in os.listdir(folder):
             b=prs['title'].split('-')
             lect_list.append(b[-1])
             lect_list_long.append(filename)
+
         else:
             continue
 
@@ -66,6 +69,7 @@ while True:
             with open(path+lect_fullname,"w") as lecture_file:
                 lecture_file.writelines(frontmatter.dumps(lect))
 
+
             break
         else:
             print("wrong entry")
@@ -77,6 +81,7 @@ course_text.append('{% for lecture in lectures %}\n')
 course_text.append('{% if lecture.course contains page.title%}\n')
 course_text.append('<p><a href="{{ lecture.url | relative_url }}">{{ lecture.title | escape }} </a></p>\n')
 course_text.append('{% endif %}{% endfor %}</ul>')
+
 
 course_title_f = course_title.replace(' ','_')
 with open("courses/"+course_title_f+".md","w") as file:

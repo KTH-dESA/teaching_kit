@@ -5,11 +5,13 @@ lect_title = input("title: ")
 lect_author = input("author: ")
 #lect_date = input("date (YYYY-MM-DD): ")
 lect_date = '2020-01-01'
+
 lect_description = input("Write a short description: ")
 
 lect_text = ['---','\n','categories: lecture','\n','layout: presentation','\n','author: ', lect_author,'\n','title: ',lect_title,'\n','date: ',str(lect_date), '\n---']
 # First Slide
 lect_text.append("\n#"+lect_title+"\n\n"+lect_description+"\n\nAuthor: "+lect_author+"\n\nThis lecture is part of: {{ page.course }} \n\nDate: "+lect_date+"\n\n")
+
 
 # Makes a list of all the tags
 path = '_posts/modules'

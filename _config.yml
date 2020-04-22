@@ -44,6 +44,9 @@ collections:
   posts:
     output: false
 
+    permalink: /:categories/:title:output_ext
+
+
 defaults:
   - scope:
       path: ""
