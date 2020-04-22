@@ -10,3 +10,7 @@ scripts/pptx_extract_shapes.py
 scripts/test.py
 *.pyc
 *__pycache__
+includes/header.html
+includes/navigation.html
+includes/site_structure.html
+
