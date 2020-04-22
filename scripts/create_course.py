@@ -54,11 +54,14 @@ while True:
         l = input("choose one lecture: ")
         if l in lect_list:
             print("you selected: "+l)
-            #course_text.append("1. ["+l+"]({{base.url}}/teaching_kit/_posts/"+l+".html)\n")
+            l_url = l.replace(' ','_')            
+            course_text.append("1. ["+l+"]({{base.url}}/teaching_kit/lecture/"+l_url+".html)\n")
             
-            # write the course name in the Lecture
+
+            # obtain full name of lecture
             i = lect_list.index(l)
             lect_fullname = lect_list_long[i]
+            # Load lecture and apply new value to "course"
             lect=frontmatter.load(path+lect_fullname)
             try: 
                 a = lect["course"]
@@ -74,13 +77,13 @@ while True:
         else:
             print("wrong entry")
 
-course_text.append('\n***Lectures contained in this course:***\n')
-course_text.append('<ul class="post-list">\n')
-course_text.append('{% assign lectures = site.posts | where: "categories","lecture" %}\n')
-course_text.append('{% for lecture in lectures %}\n')
-course_text.append('{% if lecture.course contains page.title%}\n')
-course_text.append('<p><a href="{{ lecture.url | relative_url }}">{{ lecture.title | escape }} </a></p>\n')
-course_text.append('{% endif %}{% endfor %}</ul>')
+#course_text.append('\n***Lectures contained in this course:***\n')
+#course_text.append('<ul class="post-list">\n')
+#course_text.append('{% assign lectures = site.posts | where: "categories","lecture" %}\n')
+#course_text.append('{% for lecture in lectures %}\n')
+#course_text.append('{% if lecture.course contains page.title%}\n')
+#course_text.append('<p><a href="{{ lecture.url | relative_url }}">{{ lecture.title | escape }} </a></p>\n')
+#course_text.append('{% endif %}{% endfor %}</ul>')
 
 
 course_title_f = course_title.replace(' ','_')

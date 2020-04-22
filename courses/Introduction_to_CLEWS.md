@@ -10,11 +10,5 @@ Authors: {{page.author}}
 
 This course is an introduction to CLEWS
 
-***Lectures contained in this course:***
-
-<ul class="post-list">
-{% assign lectures = site.posts | where: "categories","lecture" %}
-{% for lecture in lectures %}
-{% if lecture.course contains page.title%}
-<p><a href="{{ lecture.url | relative_url }}">{{ lecture.title | escape }} </a></p>
-{% endif %}{% endfor %}</ul>
+1. [Lecture Clews]({{base.url}}/teaching_kit/lecture/Lecture_Clews.html)
+1. [Lecture Water]({{base.url}}/teaching_kit/lecture/Lecture_Water.html)
