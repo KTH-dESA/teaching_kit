@@ -19,6 +19,8 @@ def pptx_extract(path,filename):
 
     author = prs.core_properties.author
     title, file_extension = os.path.splitext(filename)
+
+    title = title.replace(' ','_')
     
     # Assign tags to presentation
     print("- assign tags to the presentation "+title+", press 0 when finished")
