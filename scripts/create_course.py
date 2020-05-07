@@ -47,6 +47,7 @@ while True:
         l = input("choose one lecture: ")
         if l in lect_list:
             print("you selected: "+l)
+            l = l.replace(' ','_')
             course_text.append("1. ["+l+"]({{base.url}}/teaching_kit/_posts/"+l+".html)\n")
             break
         else:

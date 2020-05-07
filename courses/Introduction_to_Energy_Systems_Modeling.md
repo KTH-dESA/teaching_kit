@@ -2,13 +2,13 @@
 categories: course
 layout: page
 author: Lorenzo Sani
-title: Introduction to Energy System Modeling
+title: Introduction to Energy Systems Modeling
 ---
 
-# Introduction to Energy System Modeling
+# Introduction to Energy Systems Modeling
 
 This course contains the introductory lecture created connecting the introductory modules automatically converted from ppt
 
 Author: Lorenzo Sani
 
-1. [Introduction Lecture]({{base.url}}/teaching_kit/_posts/Introduction Lecture.html)
+1. [Introduction_Lecture]({{base.url}}/teaching_kit/_posts/Introduction_Lecture.html)
