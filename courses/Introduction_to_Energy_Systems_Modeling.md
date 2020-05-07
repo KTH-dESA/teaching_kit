@@ -11,4 +11,4 @@ This course contains the introductory lecture created connecting the introductor
 
 Author: Lorenzo Sani
 
-1. [Introduction_Lecture]({{base.url}}/teaching_kit/_posts/Introduction_Lecture.html)
+1. [Introduction_Lecture]({{base.url}}/teaching_kit/lecture/Introduction_Lecture.html)

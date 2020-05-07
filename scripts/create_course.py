@@ -48,7 +48,7 @@ while True:
         if l in lect_list:
             print("you selected: "+l)
             l = l.replace(' ','_')
-            course_text.append("1. ["+l+"]({{base.url}}/teaching_kit/_posts/"+l+".html)\n")
+            course_text.append("1. ["+l+"]({{base.url}}/teaching_kit/lecture/"+l+".html)\n")
             break
         else:
             print("wrong entry")
