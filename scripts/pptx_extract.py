@@ -5,6 +5,7 @@ def pptx_extract(path,filename):
     from figure_extract import figure_extract
     from table_extract import table_extract
     from text_extract import text_extract
+    from special_char import special_char
 
     import os
     from pathlib import Path
@@ -20,6 +21,7 @@ def pptx_extract(path,filename):
     author = prs.core_properties.author
     title, file_extension = os.path.splitext(filename)
 
+    title = special_char(title)
     title = title.replace(' ','_')
     
     # Assign tags to presentation
@@ -43,7 +45,9 @@ def pptx_extract(path,filename):
     # Extract and convert
     for slide in prs.slides:
         slide_text.append("\n---\n#")  # new slide, new line, TITLE --- Append is used to add a value at the end of the string
-        try: slide_text.append(slide.shapes.title.text)
+        try: 
+            s = special_char(slide.shapes.title.text)
+            slide_text.append(s)
         except: slide_text.append("")
         
         slide_text.append("\n")
