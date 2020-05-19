@@ -62,7 +62,7 @@ while True:
             else: continue        
     print("this is the list of modules with the tag "+t+": "+str(list_mod))
     
-    # Choose one moduel
+    # Choose one module
     while True:
         module=input("choose one module from this list (type 0 if you want to go back): ")
         if module in str(list_mod):
@@ -70,7 +70,7 @@ while True:
             #module=frontmatter.load(path+"/"+module+".html")
             #lect_text.append("\n---\n{% include_relative modules/"+module+".html %}")
             #lect_text.append("\n---\n"+module.content)
-            lect_text.append("\n{% include_relative /modules/2020-01-01-"+module+".html %}")
+            lect_text.append("{% include_relative /modules/2020-01-01-"+module+".html %}\n---\n")
             break
         elif module=="0":
             n=n-1
@@ -79,7 +79,7 @@ while True:
             print("wrong entry")
 
 # Last slide
-lect_text.append("\n---\n#End")
+lect_text.append("\n#End")
 
 # Save Lecture
 lect_title_f = lect_title.replace(' ','_')

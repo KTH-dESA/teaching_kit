@@ -12,5 +12,5 @@ def figure_extract(shape, text, n, title):
     left=str(shape.left.pt)
     style = "style"+str(n)
     #text.append("\n<img src=figures/"+title+"/"+name+" position=absolute top="+top+"px left="+left+"px width="+width+"px height="+height+"px />")
-    text.append("\n<style> div."+style+" {position: absolute; left: "+left+"px; top:"+top+"px} </style>\n<div class="+style+"><img src={{base.url}}/teaching_kit/assets/img/"+title+"/"+name+" width="+width+"px height="+height+"px /></div>")
-    
+    #text.append("\n<style> div."+style+" {position: absolute; left: "+left+"px; top:"+top+"px} </style>\n<div class="+style+"><img src={{base.url}}/teaching_kit/assets/img/"+title+"/"+name+" width="+width+"px height="+height+"px /></div>")
+    text.append("\n<div style='position: absolute; left: "+left+"px; top:"+top+"px'><img src={{base.url}}/teaching_kit/assets/img/"+title+"/"+name+" width="+width+"px height="+height+"px /></div>\n")

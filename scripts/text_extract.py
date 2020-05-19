@@ -10,9 +10,10 @@ def text_extract(shape, text, n):
         top=str(shape.top.pt)
         left=str(shape.left.pt)
         style = "box"+str(n)
-        text.append("\n<style> div."+style+" {position: absolute; left: "+left+"px; top:"+top+"px; width: "+width+"px; height: "+height+"} </style>\n<div class="+style+">")
+        #text.append("\n<style> div."+style+" {position: absolute; left: "+left+"px; top:"+top+"px; width: "+width+"px; height: "+height+"} </style>\n<div class="+style+">")
         #text.append(shape.text_frame.text)
-
+        #text.append("\n<style> div."+style+" {position: absolute; left: "+left+"px; top:"+top+"px; width: "+width+"px; height: "+height+"} </style>\n<div class="+style+">")
+        text.append("\n<div style='position: absolute; left: "+left+"px; top:"+top+"px; width: "+width+"px; height: "+height+"'>")
         NoneType = type(None)
 
         l=0
@@ -25,11 +26,11 @@ def text_extract(shape, text, n):
             except: skip=1
 
             if l==1 and skip==0 and isinstance(paragraph.runs[0].font.size, NoneType): #default size if not assigned in ppt
-                size = 18
+                size = 14
             elif l==1 and skip==0:          # l=1 means that it check the size only for the firs work of the paragraph
                 size = paragraph.runs[0].font.size.pt
             elif l==1 and skip==1:
-                size = 18
+                size = 14
 
 
             text.append("<div style=font-size:"+str(size)+"px>")

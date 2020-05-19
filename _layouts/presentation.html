@@ -13,20 +13,60 @@
         font-family: 'Ubuntu';
         font-weight: 500;
       }
-        .remark-slide-content:after {
-        content: "";
+
+      /* THIS SETS THE SPECIF SIZE Of SLIDE VIEW
+      .remark-container {
+        height: 540px!important;
+        width: 960px!important;
+        height: 100%;
+      }
+      */
+      
+      .remark-slide-content:after {
+        content: "";        
         display: block;
-        width: 312px;
-        height: 66px;
+        width: 200px;
+        height: 60px;
 
         position: absolute;
-        bottom: 1em;
-        left: 32em;
+        bottom: 35px;
+        right: 20px;
 
         background-image: url('{{base.url}}/teaching_kit/assets/img/fig_template/OpTIMUS_logo.png');
         background-repeat: no-repeat;
-        
+        background-size: contain;
       }
+
+
+
+      /*.remark-slide-content:after {
+        content: "";        
+        display: block;
+        width: 106px;
+        height: 41px;
+
+        position: absolute;
+        top: 72px;
+        left: 787px;
+
+        background-image: url('{{base.url}}/teaching_kit/assets/img/fig_template/OpTIMUS_logo.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        content: "";        
+        display: block;
+        width: 131px;
+        height: 39px;
+
+        position: absolute;
+        top: 27px;
+        left: 773px;
+
+        background-image: url('{{base.url}}/teaching_kit/assets/img/fig_template/OSeMOSYS_logo.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+      }*/
+
       table {
         table-layout: fixed; 
         position: absolute;
@@ -39,10 +79,11 @@
         border-collapse: collapse;
         border: 1px solid black;
       }
+      /* some specific layout rules for tables*/
       tr:nth-child(even) {background-color: #f2f2f2;}
       th {font: bold;   background-color: #150281;  color: white}
 
-
+      /* layout for slide title */
       .remark-slide-content h1 {
         margin: -20px -80px 0 -80px;
         box-sizing: border-box;
@@ -86,18 +127,25 @@
       a:hover {
         color: #0e7800;
       }
+      
       .fit-image {
+        /*background-size: 960px, 540px;*/
         background-size: contain;
         background-repeat: no-repeat;
         background-position: top center;
-        height: 90%;
-        width: 100%;
         display: table;
       }
+
+      /* layout for images*/
       .remark-slide-content img {
         max-width: 100%;
         position: relative;
       }
+
+      /*.remark-slide {
+        slide-size: 960px, 540px;
+      }*/
+
     </style>
   </head>
   <body>
