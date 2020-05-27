@@ -69,8 +69,12 @@ def pptx_extract(path,filename):
             else:
                 slide_text.append("***MISSING OBJECT*** insert manually \n")
                 continue
+        # Extract slide notes
+        if slide.has_notes_slide:
+            slide_text.append("???\n"+slide.notes_slide.notes_text_frame.text)
 
-    # Save Slide
+
+    # Save Module
     title_f = title.replace(' ','_')
     with open("_posts/modules/"+date+"-"+title_f+".html","w") as presentation_file:
         presentation_file.writelines(slide_text)
