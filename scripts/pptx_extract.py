@@ -1,14 +1,13 @@
-def pptx_extract(path,filename):
-
-    from pptx import Presentation
-    import pptx
-    from figure_extract import figure_extract
-    from table_extract import table_extract
-    from text_extract import text_extract
-    from special_char import special_char
 
 import os
 from pathlib import Path
+from pptx import Presentation, shapes
+
+from figure_extract import figure_extract
+from table_extract import table_extract
+from text_extract import text_extract
+from special_char import special_char
+
 
 def pptx_extract(path,filename):
 
@@ -68,7 +67,7 @@ def pptx_extract(path,filename):
             elif shape.has_chart:
                 slide_text.append("***MISSING CHART*** insert manually \n")
 
-            elif isinstance(shape, pptx.shapes.placeholder.PlaceholderPicture) or isinstance(shape, pptx.shapes.picture.Picture):
+            elif isinstance(shape, shapes.placeholder.PlaceholderPicture) or isinstance(shape, shapes.picture.Picture):
                 n=n+1
                 figure_extract(shape, slide_text, n, title)
             else:
