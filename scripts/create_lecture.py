@@ -17,7 +17,7 @@ tag_list =[]
 for file in os.listdir(folder):
     filename = os.fsdecode(file)
     title, file_extension = os.path.splitext(filename)
-    if file_extension==".html":
+    if file_extension==".md":
         prs = frontmatter.load(path+"/"+filename)
         try:tag_list= tag_list + prs["tags"]
         except: continue
@@ -32,14 +32,14 @@ while True:
     if n==1:
         print("Choose the first module")
     else:
-        y=input("\nyour presentation contains "+str(n-1)+" modules, do you want to add more modules? [y/n] ")    
+        y=input("\nyour presentation contains "+str(n-1)+" modules, do you want to add more modules? [y/n] ")
         if y=="y":
             print("next selection")
         elif y=="n":
             break
-    
+
     print(tag_list)
-    
+
     # Choose tag
     while True:
         t = input("choose one tag: ")
@@ -50,19 +50,19 @@ while True:
             print("wrong entry")
 
     # Show modules corresponding to the selected tag
-    list_mod=[]    
+    list_mod=[]
     for file in os.listdir(folder):
         filename = os.fsdecode(file)
         title, file_extension = os.path.splitext(filename)
-        if file_extension==".html":
+        if file_extension==".md":
             prs = frontmatter.load(path+"/"+filename)
             if t in prs["tags"]:
                 b=title.split('-') # this is to remove date from title
                 list_mod.append(b[-1])
-            else: continue        
+            else: continue
     print("this is the list of modules with the tag "+t+": "+str(list_mod))
-    
-    # Choose one module
+
+    # Choose one moduel
     while True:
         module=input("choose one module from this list (type 0 if you want to go back): ")
         if module in str(list_mod):
@@ -70,7 +70,7 @@ while True:
             #module=frontmatter.load(path+"/"+module+".html")
             #lect_text.append("\n---\n{% include_relative modules/"+module+".html %}")
             #lect_text.append("\n---\n"+module.content)
-            lect_text.append("{% include_relative /modules/2020-01-01-"+module+".html %}\n---\n")
+            lect_text.append("\n{% include_relative /modules/2020-01-01-"+module+".md %}")
             break
         elif module=="0":
             n=n-1
@@ -83,7 +83,7 @@ lect_text.append("\n#End")
 
 # Save Lecture
 lect_title_f = lect_title.replace(' ','_')
-with open("_posts/"+lect_date+"-"+lect_title_f+".html","w") as presentation_file:
+with open("_posts/" + lect_date + "-" + lect_title_f + ".md", "w") as presentation_file:
     presentation_file.writelines(lect_text)
 
 # Update content list
