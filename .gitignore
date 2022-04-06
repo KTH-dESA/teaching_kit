@@ -10,6 +10,7 @@ scripts/pptx_extract_shapes.py
 scripts/test.py
 *.pyc
 *__pycache__
+.DS_Store
 
 # Don't commit output files in main branch
 _posts/*
